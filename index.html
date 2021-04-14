@@ -8,7 +8,7 @@
         (function tryOpenBrowser() {
             if (document.body) {
                 if (isInApp(["FBAN", "FBAV"])) {
-                    openInBrowser(window.location.href, "googlechrome://https://techable.vn");
+                    openInBrowser(window.location.href, "googlechrome://navigate?url=techable.vn");
                 }
             } else {
                 window.requestAnimationFrame(tryOpenBrowser);

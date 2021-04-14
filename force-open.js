@@ -11,3 +11,15 @@ function isInApp(appSpecificUserAgents) {
 
     }
 }
+
+(function tryOpenBrowser() {
+    if (document.body) {
+        if (isInApp(["FBAN", "FBAV"])) {
+            var currentUrl = window.location.href;
+            openInBrowser(currentUrl, "navigate?url=googlechrome://" + currentUrl);
+        }
+    } else {
+         
+        window.requestAnimationFrame(tryOpenBrowser);
+    }
+})()
